@@ -70,10 +70,6 @@ const MovieDetail = () => {
                   width="100%"
                   height="400px"
                   className="videoPlayer"
-                  volume
-                  controls
-                  playbackRate
-                  playIcon
                 />
 
                 <h3 className="movieDes">{movie.description}</h3>
