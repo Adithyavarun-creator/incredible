@@ -7,7 +7,7 @@ import {
   AboutTextArticle,
   AboutTextBox,
 } from "../styles/AboutPageStyles";
-import AboutImage from "../assets/netflixPoster.png";
+import AboutImage from "../assets/netflixposter.png";
 import BackButton from "../components/BackButton/BackButton";
 import Header from "../components/Header/Header";
 
