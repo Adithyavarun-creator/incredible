@@ -16,12 +16,12 @@ export const ReleaseContainer = styled.div`
 `;
 
 export const ReleaseButton = styled(MovieButton)`
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 
   :hover {
     color: black;
-    background-color: white;
+    background-color: lightgray;
     border: 1px solid black;
   }
 

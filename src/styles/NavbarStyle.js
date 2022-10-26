@@ -87,10 +87,10 @@ export const ModalBox = styled.div`
     width: 100%;
     gap: 40px;
     flex-direction: column;
-    background-color: white;
     list-style: none;
     padding-top: 20px;
     padding-bottom: 20px;
+    border: 1px solid #e50914;
     /* position: fixed;
     top: 0;
     right: 0;

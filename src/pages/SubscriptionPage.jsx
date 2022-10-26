@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   SubscriptionContainer,
   GridBox,
@@ -13,6 +13,8 @@ import {
 import { NavLinks } from "../styles/NavbarStyle";
 import { BsShareFill } from "react-icons/bs";
 import Header from "../components/Header/Header";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SubscriptionPage = () => {
   const url = "https://incredible-indol.vercel.app/plans&subscriptions";
@@ -28,6 +30,10 @@ const SubscriptionPage = () => {
     }
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
+
   return (
     <>
       <Header title="Check onto variuos plans below" />
@@ -40,7 +46,7 @@ const SubscriptionPage = () => {
         </NavLinks>
       </ShareBox>
       <SubscriptionContainer>
-        <GridBox>
+        <GridBox data-aos="flip-left">
           <PlanBox>
             <span className="planName">Free</span>
           </PlanBox>
@@ -59,12 +65,12 @@ const SubscriptionPage = () => {
             <SignInButton>Sign in</SignInButton>
           </ButtonSubsBox>
         </GridBox>
-        <GridBox>
+        <GridBox data-aos="flip-left">
           <PlanBox>
             <span className="planName">Basic</span>
           </PlanBox>
           <PriceBox>
-            <span className="subPrice">$0</span>
+            <span className="subPrice">$50</span>
             <span className="perMonth">per month</span>
           </PriceBox>
           <ListElements>
@@ -78,12 +84,12 @@ const SubscriptionPage = () => {
             <SignInButton>Sign in</SignInButton>
           </ButtonSubsBox>
         </GridBox>
-        <GridBox>
+        <GridBox data-aos="flip-left">
           <PlanBox>
             <span className="planName">Standard</span>
           </PlanBox>
           <PriceBox>
-            <span className="subPrice">$0</span>
+            <span className="subPrice">$100</span>
             <span className="perMonth">per month</span>
           </PriceBox>
           <ListElements>

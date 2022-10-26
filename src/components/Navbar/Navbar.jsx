@@ -11,7 +11,6 @@ import {
 } from "../../styles/NavbarStyle";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { LinkStyle } from "../../styles/LinkStyle";
 import { BsShareFill } from "react-icons/bs";
 import Logo from "../../assets/netflix.png";
 
@@ -63,7 +62,7 @@ const Navbar = () => {
       </MobileIcon>
 
       {toggle && (
-        <ModalBox>
+        <ModalBox data-aos="fade-down">
           <NavLinks to="/">
             <LogoImage src={Logo} alt="" onClick={() => setToggle(false)} />
           </NavLinks>

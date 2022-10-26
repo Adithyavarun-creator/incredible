@@ -9,6 +9,7 @@ import { BsShareFill } from "react-icons/bs";
 import BackButton from "../BackButton/BackButton";
 import ReactPlayer from "react-player";
 
+
 const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});

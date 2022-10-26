@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   ImageContainer,
   MovieCardWrapper,
@@ -11,13 +11,19 @@ import {
 } from "../../styles/MovieCardStyle";
 import { LinkStyle } from "../../styles/LinkStyle";
 import { BsFillStarFill } from "react-icons/bs";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const MovieCard = ({ movie }) => {
   const { id, coverImage, name, releaseYear, description, rating, category } =
     movie;
 
+  useEffect(() => {
+    AOS.init({ duration: 3000 });
+  }, []);
+
   return (
-    <MovieCardWrapper>
+    <MovieCardWrapper data-aos="fade-up">
       <LinkStyle to={`/movie/${id}`}>
         <ImageContainer src={coverImage} alt={name} />
         <ContentBox>
