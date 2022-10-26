@@ -13,14 +13,14 @@ const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState({});
 
-  const url = `https://mwork-adithyavarun-creator.vercel.app/movie/${id}`;
+  const url = `https://incredible-indol.vercel.app/movie/${id}`;
 
   const shareMovie = () => {
     if (navigator.share) {
       navigator
         .share({
           title: `${movie.name}`,
-          text: "Watch this movie free",
+          text: "Watch this movie for free without paying",
           url: url,
         })
         .then(() => {

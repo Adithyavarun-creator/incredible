@@ -22,7 +22,7 @@ const Navbar = () => {
     AOS.init({ duration: 3000 });
   }, []);
 
-  const url = "https://mwork-adithyavarun-creator.vercel.app";
+  const url = "https://incredible-indol.vercel.app";
 
   const shareFunction = async () => {
     try {

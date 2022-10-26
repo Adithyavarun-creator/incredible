@@ -15,8 +15,7 @@ import { BsShareFill } from "react-icons/bs";
 import Header from "../components/Header/Header";
 
 const SubscriptionPage = () => {
-  const url =
-    "https://mwork-adithyavarun-creator.vercel.app/plans&subscriptions";
+  const url = "https://incredible-indol.vercel.app/plans&subscriptions";
 
   const shareFunction = async () => {
     try {
