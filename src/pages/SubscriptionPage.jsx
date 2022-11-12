@@ -17,7 +17,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const SubscriptionPage = () => {
-  const url = "https://incredible-indol.vercel.app/plans&subscriptions";
+  const url =
+    "https://sendsteps-adithyavarun-creator.vercel.app/plans&subscriptions";
 
   const shareFunction = async () => {
     try {

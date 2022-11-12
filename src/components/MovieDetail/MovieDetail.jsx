@@ -15,7 +15,7 @@ const MovieDetail = () => {
   const [movie, setMovie] = useState({});
 
   const commonVideoLink = "https://www.youtube.com/watch?v=qEVUtrk8_B4";
-  const url = `https://incredible-indol.vercel.app/movie/${id}`;
+  const url = `https://sendsteps-adithyavarun-creator.vercel.app/movie/${id}`;
   const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
 
   const shareMovie = () => {

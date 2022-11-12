@@ -21,7 +21,7 @@ const Navbar = () => {
     AOS.init({ duration: 3000 });
   }, []);
 
-  const url = "https://incredible-indol.vercel.app";
+  const url = "https://sendsteps-adithyavarun-creator.vercel.app";
 
   const shareFunction = async () => {
     try {

@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### API Used
+
+The API used to fetch movies list and movie details are accessed from TMDB resource, and deployed in vercel for deployment. The complete application is doen using React js v18, Styled Components, aos, react icons, react player for playing a dummy video. The media queries could be found out in breakpoints.js file
