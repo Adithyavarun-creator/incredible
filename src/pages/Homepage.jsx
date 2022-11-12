@@ -1,81 +1,73 @@
 import React, { useState } from "react";
-import { movies } from "../movieData/movies";
-import Filter from "../components/Filter/Filter";
-import Ratings from "../components/Ratings/Ratings";
-import ReleaseYear from "../components/ReleaseYear/ReleaseYear";
 import {
   HomeContainer,
   FeatureBox,
   MovieContainer,
   HeaderSubtitle,
+  SearchResults,
 } from "../styles/HomepageStyle";
 import Search from "../components/Search/Search";
 import MovieCard from "../components/MovieCard/MovieCard";
 import Header from "../components/Header/Header";
+import { useEffect } from "react";
 
 const Homepage = () => {
-  const [moviesList, setMoviesList] = useState(movies);
   const [search, setSearch] = useState("");
+  const [tmdb, setTmdb] = useState([]);
+  const [results, setResults] = useState(false);
 
-  const filterItem = (category) => {
-    const newMovies = movies.filter((movie) => {
-      return movie.category === category;
-    });
+  const URL =
+    "https://api.themoviedb.org/3/movie/popular?api_key=6e91748064ac036732e6c0b1cd6e553d";
 
-    setMoviesList(newMovies);
-  };
+  useEffect(() => {
+    fetch(URL)
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data);
+        setTmdb(data.results);
+      });
+  }, []);
 
-  const filterRating = (rating) => {
-    const newMovies = movies.filter((movie) => {
-      return Number(movie.rating) === Number(rating);
-    });
-
-    setMoviesList(newMovies);
-  };
-
-  const filterReleaseYear = (year) => {
-    const newMovies = movies.filter((movie) => {
-      return Number(movie.releaseYear) === Number(year);
-    });
-
-    setMoviesList(newMovies);
+  const searchMovie = async (e) => {
+    e.preventDefault();
+    setResults(false);
+    if (search === "") {
+      return;
+    }
+    try {
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=6e91748064ac036732e6c0b1cd6e553d&query=${search}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      console.log(data);
+      setResults(true);
+      setTmdb(data.results);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <HomeContainer>
-      <Header title="Incredible Task Movies" />
-      <HeaderSubtitle>
-        Want to watch movies ! Scroll Below for Free Access
-      </HeaderSubtitle>
+      <Header title="NotFlix" />
+      <HeaderSubtitle>Watch movies for free !</HeaderSubtitle>
       <FeatureBox>
-        <Search setSearch={setSearch} search={search} />
-
-        <Filter
-          filterItem={filterItem}
-          movies={movies}
-          setMoviesList={setMoviesList}
+        <Search
+          setSearch={setSearch}
+          search={search}
+          searchMovie={searchMovie}
         />
-
-        <Ratings filterRating={filterRating} />
-
-        <ReleaseYear filterReleaseYear={filterReleaseYear} />
       </FeatureBox>
-
+      {results && (
+        <SearchResults>
+          <h2>
+            Search results for <span>{search}</span>
+          </h2>
+        </SearchResults>
+      )}
       <MovieContainer>
-        {moviesList
-          .filter((result) => {
-            if (search === "") {
-              return result;
-            } else if (
-              result.name.toLowerCase().includes(search.toLowerCase()) ||
-              result.category.toLowerCase().includes(search.toLowerCase()) ||
-              result.releaseYear.toLowerCase().includes(search.toLowerCase())
-            ) {
-              return result;
-            }
-          })
-          .map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
+        {tmdb &&
+          tmdb.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} search={search} />
           ))}
       </MovieContainer>
     </HomeContainer>

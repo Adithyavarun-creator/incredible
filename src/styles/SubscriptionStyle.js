@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../breakpoints";
 import { MovieButton } from "./Button";
 
 export const SubscriptionContainer = styled.div`
@@ -13,7 +14,7 @@ export const SubscriptionContainer = styled.div`
   column-gap: 40px;
   justify-content: center;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     display: grid;
     grid-template-columns: 230px;
     /* grid-template-rows: 250px; */
@@ -21,7 +22,7 @@ export const SubscriptionContainer = styled.div`
     padding: 5px 5px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     display: grid;
     grid-template-columns: 280px;
     /* grid-template-rows: 250px; */
@@ -35,7 +36,7 @@ export const GridBox = styled.div`
   cursor: pointer;
   transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     border: 1px solid #e50914;
     height: 420px;
   }
@@ -43,11 +44,11 @@ export const GridBox = styled.div`
   :hover {
     transform: scale(1.1);
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media ${devices.smallMobiles} {
       transform: none;
     }
 
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media ${devices.tabletsAndMobiles} {
       transform: scale(1.1);
     }
   }
@@ -61,11 +62,11 @@ export const PlanBox = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     padding: 20px 10px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     padding: 20px 15px;
   }
 
@@ -74,11 +75,11 @@ export const PlanBox = styled.div`
     color: black;
     font-weight: bolder;
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media ${devices.smallMobiles} {
       font-size: 25px;
     }
 
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media ${devices.tabletsAndMobiles} {
       font-size: 30px;
     }
   }
@@ -92,7 +93,7 @@ export const PriceBox = styled.div`
   margin-top: 30px;
   margin-bottom: 20px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     margin-top: 20px;
     margin-bottom: 10px;
   }
@@ -101,7 +102,7 @@ export const PriceBox = styled.div`
     font-size: 56px;
     color: #e50914;
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media ${devices.smallMobiles} {
       font-size: 46px;
     }
   }
@@ -110,7 +111,7 @@ export const PriceBox = styled.div`
     font-size: 48px;
     color: #e50914;
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media ${devices.smallMobiles} {
       font-size: 38px;
     }
   }
@@ -125,7 +126,7 @@ export const ListElements = styled.ul`
   gap: 15px;
   margin-top: 20px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     gap: 10px;
     margin-top: 15px;
   }
@@ -135,7 +136,7 @@ export const PlanList = styled.li`
   font-size: 18px;
   color: white;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     font-size: 15px;
   }
 `;
@@ -144,7 +145,7 @@ export const ButtonSubsBox = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 20px;
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     /* margin-top: 15px; */
     margin-bottom: 0;
   }
@@ -156,7 +157,7 @@ export const SignInButton = styled(MovieButton)`
   background-color: white;
   font-size: 18px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     padding: 8px 20px;
     font-size: 15px;
   }

@@ -3,7 +3,6 @@ import {
   ImageContainer,
   MovieCardWrapper,
   Title,
-  ReleaseYear,
   Description,
   ContentBox,
   RatingBox,
@@ -14,8 +13,10 @@ import { BsFillStarFill } from "react-icons/bs";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const MovieCard = ({ movie }) => {
-  const { id, coverImage, name, releaseYear, description, rating, category } =
+const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
+
+const MovieCard = ({ movie, search }) => {
+  const { id, title, poster_path, vote_average, release_date, overview } =
     movie;
 
   useEffect(() => {
@@ -23,22 +24,22 @@ const MovieCard = ({ movie }) => {
   }, []);
 
   return (
-    <MovieCardWrapper data-aos="fade-up">
-      <LinkStyle to={`/movie/${id}`}>
-        <ImageContainer src={coverImage} alt={name} />
-        <ContentBox>
-          <Title>{name}</Title>
-          <ReleaseYear>{releaseYear}</ReleaseYear>
-          <ReleaseYear>{category}</ReleaseYear>
-          <Description>{description.slice(0, 20)}...</Description>
-        </ContentBox>
-      </LinkStyle>
+    <>
+      <MovieCardWrapper data-aos="fade-up">
+        <LinkStyle to={`/movie/${id}`}>
+          <ImageContainer src={API_IMAGE + poster_path} alt={title} />
+          <ContentBox>
+            <Title>{title}</Title>
+            <Description>{overview.slice(0, 30)}...</Description>
+          </ContentBox>
+        </LinkStyle>
 
-      <RatingBox>
-        <BsFillStarFill className="starIcon" />
-        <Rating>{rating}</Rating>
-      </RatingBox>
-    </MovieCardWrapper>
+        <RatingBox>
+          <BsFillStarFill className="starIcon" />
+          <Rating>{vote_average}</Rating>
+        </RatingBox>
+      </MovieCardWrapper>
+    </>
   );
 };
 

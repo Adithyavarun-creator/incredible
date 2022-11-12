@@ -1,16 +1,17 @@
 import styled from "styled-components";
+import { devices } from "../breakpoints";
 
 export const ArticleContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
   padding: 20px 20px;
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     padding: 15px 15px;
     gap: 35px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     padding: 15px 15px;
     gap: 45px;
   }
@@ -35,12 +36,12 @@ export const ArticleImage = styled.img`
     box-shadow: -1px 3px 41px 0px rgba(255, 0, 0, 1);
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     height: 200px;
     width: 300px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     height: 300px;
     width: 400px;
   }
@@ -60,11 +61,11 @@ export const AboutTextArticle = styled.article`
   color: white;
   text-align: justify;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     font-size: 20px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     font-size: 26px;
   }
 `;

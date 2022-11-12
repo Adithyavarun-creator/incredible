@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { devices } from "../breakpoints";
 
 export const HomeContainer = styled.div`
   padding-top: 1rem;
@@ -6,7 +7,7 @@ export const HomeContainer = styled.div`
   padding-bottom: 3rem;
   padding-left: 2rem;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     padding-top: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
@@ -19,30 +20,16 @@ export const HomeContainer = styled.div`
   .searchInput:focus {
     text-align: center;
 
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media ${devices.tabletsAndIpads} {
       font-size: 14px;
     }
 
-    @media (min-width: 481px) and (max-width: 767px) {
+    @media ${devices.tabletsAndMobiles} {
       font-size: 14px;
     }
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media ${devices.smallMobiles} {
       font-size: 14px;
-    }
-  }
-
-  .filterBox {
-    @media (min-width: 768px) and (max-width: 1024px) {
-    }
-
-    @media (min-width: 481px) and (max-width: 767px) {
-    }
-
-    @media (min-width: 320px) and (max-width: 480px) {
-      padding: 2rem 2rem;
-      display: flex;
-      flex-direction: column;
     }
   }
 `;
@@ -54,7 +41,7 @@ export const FeatureBox = styled.div`
   flex-direction: column;
   gap: 20px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     /* padding: 1rem 1rem; */
     padding-top: 1rem;
     gap: 10px;
@@ -62,22 +49,30 @@ export const FeatureBox = styled.div`
 `;
 
 export const MovieContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  row-gap: 70px;
-  column-gap: 35px;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  column-gap: 40px;
+  row-gap: 60px;
   justify-content: center;
-  flex-wrap: wrap;
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media ${devices.tabletsAndIpads} {
+    grid-template-columns: repeat(3, 200px);
+    column-gap: 40px;
+    row-gap: 60px;
+    padding: 20px 20px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
+    grid-template-columns: repeat(2, 200px);
+    column-gap: 40px;
+    row-gap: 60px;
+    padding: 20px 20px;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     margin-top: 40px;
     justify-content: center;
+    grid-template-columns: repeat(1, 200px);
   }
 `;
 
@@ -89,4 +84,21 @@ export const HeaderSubtitle = styled.h2`
   text-align: center;
   margin-top: 40px;
   text-align: center;
+`;
+
+export const SearchResults = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+
+  h2 {
+    color: white;
+    font-size: 26px;
+  }
+
+  span {
+    font-size: 26px;
+    color: red;
+  }
 `;

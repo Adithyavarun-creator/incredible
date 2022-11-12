@@ -1,15 +1,20 @@
 import React from "react";
-import { SearchBox, SearchInput } from "../../styles/SearchStyles";
+import {
+  SearchBox,
+  SearchInput,
+  SearchButton,
+} from "../../styles/SearchStyles";
 
-const Search = ({ setSearch, search }) => {
+const Search = ({ setSearch, search, searchMovie }) => {
   return (
     <SearchBox>
       <SearchInput
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Search movie/category/year..."
+        placeholder="Search movies 🎬"
       />
+      <SearchButton onClick={searchMovie}>Search Movie</SearchButton>
     </SearchBox>
   );
 };

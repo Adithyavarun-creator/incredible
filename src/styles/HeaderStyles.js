@@ -5,9 +5,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const HeaderTitle = styled.h1`
-  font-size: 30px;
-  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 38px;
+  color: red;
   text-align: center;
 `;

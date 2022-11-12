@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { devices } from "../breakpoints";
 
 export const MovieButton = styled.button`
   padding: 10px 15px;
@@ -32,15 +33,16 @@ export const BackLink = styled(Link)`
   align-items: center;
   gap: 10px;
 
-  @media (min-width: 768px) and (max-width: 1024px) {
-    padding: 14px 24px;
+  @media ${devices.tabletsAndIpads} {
+    padding: 10px 20px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
-    padding: 12px 20px;
+  @media ${devices.tabletsAndMobiles} {
+    gap: 4px;
+    padding: 2px 5px;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     padding: 10px 18px;
   }
 
@@ -49,15 +51,15 @@ export const BackLink = styled(Link)`
     font-size: 18px;
     text-align: center;
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media ${devices.smallMobiles} {
       font-size: 15px;
     }
 
-    @media (min-width: 481px) and (max-width: 767px) {
-      padding: 17px;
+    @media ${devices.tabletsAndMobiles} {
+      padding: 10px;
     }
 
-    @media (min-width: 768px) and (max-width: 1024px) {
+    @media ${devices.tabletsAndIpads} {
       font-size: 20px;
     }
   }

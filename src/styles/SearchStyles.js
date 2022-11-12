@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { MovieButton } from "./Button";
+import { devices } from "../breakpoints";
 
 export const SearchBox = styled.div`
   display: flex;
@@ -6,23 +8,26 @@ export const SearchBox = styled.div`
   align-items: center;
   margin-bottom: 50px;
   margin-top: 40px;
+  gap: 20px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     margin-bottom: 20px;
     margin-top: 40px;
     display: flex;
     justify-content: center;
     margin-left: 20px;
+    flex-direction: column;
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media ${devices.tabletsAndIpads} {
     margin-bottom: 40px;
     margin-top: 30px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
-    margin-bottom: 40px;
+  @media ${devices.tabletsAndMobiles} {
+    margin-bottom: 30px;
     margin-top: 30px;
+    flex-direction: column;
   }
 `;
 
@@ -34,6 +39,7 @@ export const SearchInput = styled.input`
   font-size: 20px;
   border: 1px solid gray;
   outline: none;
+  border-radius: 15px;
 
   :focus {
     text-align: center;
@@ -43,16 +49,16 @@ export const SearchInput = styled.input`
     text-align: center;
   }
 
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media ${devices.tabletsAndIpads} {
     height: 40px;
     font-size: 16px;
   }
 
-  @media (min-width: 481px) and (max-width: 767px) {
-    width: 50%;
+  @media ${devices.tabletsAndMobiles} {
+    width: 80%;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     height: 40px;
     font-size: 12px;
     border: 1px solid gray;
@@ -66,5 +72,20 @@ export const SearchInput = styled.input`
     ::placeholder {
       text-align: center;
     }
+  }
+`;
+
+export const SearchButton = styled(MovieButton)`
+  color: white;
+  background-color: red;
+  font-size: 18px;
+
+  :hover {
+    background-color: #ff4500;
+  }
+
+  @media ${devices.smallMobiles}{
+    font-size: 12px;
+
   }
 `;

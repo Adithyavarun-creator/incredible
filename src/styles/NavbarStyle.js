@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { devices } from "../breakpoints";
 
 export const NavigationContainer = styled.nav`
   padding: 20px 20px;
@@ -22,7 +23,7 @@ export const NavListItems = styled.div`
     font-size: 24px;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     display: none;
   }
 `;
@@ -32,17 +33,17 @@ export const MobileIcon = styled.div`
     display: none;
   }
 
-  @media (min-width: 1025px) and (max-width: 1280px) {
+  @media ${devices.bigLaptopsAndDesktops} {
     display: none;
   }
-  @media (min-width: 768px) and (max-width: 1024px) {
+  @media ${devices.tabletsAndIpads} {
     display: none;
   }
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     display: none;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     padding: 10px 10px;
     position: static;
     top: 0;
@@ -61,48 +62,38 @@ export const MobileIcon = styled.div`
 `;
 
 export const IconBox = styled.div`
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     display: flex;
     justify-content: center;
     color: white;
   }
 `;
 
-export const MenuBox = styled.div`
-  @media (min-width: 320px) and (max-width: 480px) {
-  }
-`;
-
 export const ModalBox = styled.div`
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     display: none;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     align-items: center;
     justify-content: center;
     background-color: black;
     display: flex;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     gap: 40px;
     flex-direction: column;
     list-style: none;
     padding-top: 20px;
     padding-bottom: 20px;
     border: 1px solid #e50914;
-    /* position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0; */
   }
 `;
 export const UnorderList = styled.ul`
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     display: none;
   }
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -112,11 +103,11 @@ export const UnorderList = styled.ul`
   }
 `;
 export const MobNavList = styled.li`
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media ${devices.tabletsAndMobiles} {
     display: none;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     font-size: 28px;
     list-style: none;
   }
@@ -133,6 +124,10 @@ export const NavLinks = styled(NavLink)`
   gap: 5px;
   cursor: pointer;
 
+  @media ${devices.tabletsAndMobiles} {
+    font-size: 18px;
+  }
+
   &.active {
     color: #e50914;
   }
@@ -142,7 +137,7 @@ export const NavLinks = styled(NavLink)`
     color: #e50914;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     color: #e50914;
     font-size: 22px;
   }
@@ -152,7 +147,7 @@ export const NavLinks = styled(NavLink)`
     height: 35px;
     width: 35px;
 
-    @media (min-width: 320px) and (max-width: 480px) {
+    @media ${devices.smallMobiles} {
       height: 30px;
       width: 30px;
     }
@@ -163,7 +158,7 @@ export const LogoImage = styled.img`
   height: 60px;
   width: 100px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media ${devices.smallMobiles} {
     height: 40px;
     width: 58px;
   }
