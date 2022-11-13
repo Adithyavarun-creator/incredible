@@ -15,9 +15,8 @@ import "aos/dist/aos.css";
 
 const API_IMAGE = "https://image.tmdb.org/t/p/w500/";
 
-const MovieCard = ({ movie, search }) => {
-  const { id, title, poster_path, vote_average, release_date, overview } =
-    movie;
+const MovieCard = ({ movie }) => {
+  const { id, title, poster_path, vote_average, overview } = movie;
 
   useEffect(() => {
     AOS.init({ duration: 3000 });

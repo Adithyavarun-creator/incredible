@@ -23,7 +23,6 @@ const Homepage = () => {
     fetch(URL)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setTmdb(data.results);
       });
   }, []);
@@ -38,7 +37,6 @@ const Homepage = () => {
       const url = `https://api.themoviedb.org/3/search/movie?api_key=6e91748064ac036732e6c0b1cd6e553d&query=${search}`;
       const res = await fetch(url);
       const data = await res.json();
-      console.log(data);
       setResults(true);
       setTmdb(data.results);
     } catch (error) {

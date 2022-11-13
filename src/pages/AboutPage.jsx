@@ -2,7 +2,6 @@ import React from "react";
 import {
   ArticleContainer,
   ArticleImage,
-  ArticleContent,
   ArticleImageBox,
   AboutTextArticle,
   AboutTextBox,

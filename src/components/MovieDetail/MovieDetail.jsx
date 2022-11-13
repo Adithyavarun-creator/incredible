@@ -35,13 +35,6 @@ const MovieDetail = () => {
     }
   };
 
-  useEffect(() => {
-    getData();
-    AOS.init({ duration: 3000 });
-
-    window.scrollTo(0, 120);
-  }, [id]);
-
   const getData = () => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=6e91748064ac036732e6c0b1cd6e553d&language=en-US`
@@ -50,13 +43,19 @@ const MovieDetail = () => {
       .then((data) => setMovie(data));
   };
 
+  useEffect(() => {
+    getData();
+    AOS.init({ duration: 3000 });
+
+    window.scrollTo(0, 120);
+  }, [id]);
+
   const {
     title,
     tagline,
     poster_path,
     release_date,
     overview,
-    videoLink,
     genres,
     runtime,
     vote_count,
