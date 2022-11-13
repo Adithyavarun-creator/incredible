@@ -74,22 +74,18 @@ const MovieDetail = () => {
 
           <div className="desc">
             <BackButton link="/" text="Go Back" />
-
             <div className="titleBox" data-aos="fade-down">
               <BiCameraMovie className="movieIcon" />
               <h1 className="movieName">{title}</h1>
             </div>
-
             <div className="releaseBox">
               <AiTwotoneLike className="likeIcon" />
               <span className="voteCount">{vote_count}</span>
             </div>
-
             <div className="releaseBox">
               <h1>Runtime is</h1>
               <span>{runtime} min</span>
             </div>
-
             <div className="genresBox">
               {genres?.map((genre) => (
                 <button className="genresButton" key={genre.id}>
@@ -97,11 +93,9 @@ const MovieDetail = () => {
                 </button>
               ))}
             </div>
-
             <h2 className="releaseDate">
               Released on <span style={{ color: "red" }}>{release_date}</span>
             </h2>
-
             <div className="viewShare">
               <div className="viewBox">
                 <h2>{popularity}</h2>
@@ -113,7 +107,6 @@ const MovieDetail = () => {
                 <BsShareFill className="shareIcon" />
               </div>
             </div>
-
             {tagline ? (
               <div className="tagBox">
                 <FaHashtag className="tagIcon" />
@@ -131,11 +124,16 @@ const MovieDetail = () => {
               <h3 className="movieDes">{overview}</h3>
             </div>
             <ReactPlayer
-              url={videoLink ? videoLink : commonVideoLink}
+              url={commonVideoLink}
               width="100%"
-              height="400px"
+              height="600px"
               className="videoPlayer"
-              controls
+              controls={true}
+              loop={false}
+              volume={1}
+              config={{
+                youtube: { playerVars: { origin: "https://www.youtube.com" } },
+              }}
             />
           </div>
         </div>

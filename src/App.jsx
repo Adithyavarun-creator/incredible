@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
 import AboutPage from "./pages/AboutPage";
 import Homepage from "./pages/Homepage";
@@ -18,7 +17,6 @@ const App = () => {
           <Route path="/plans&subscriptions" element={<SubscriptionPage />} />
           <Route path="/movie/:id" element={<MoviePage />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   );
